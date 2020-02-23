@@ -1,0 +1,95 @@
+List: A abstact data type that can contain items o the same type ordered by their position in the list.
+
+Typical Operations to do on a List:
+  -Create a new (empty) List
+  -Add a item to a List
+  -Search from a item
+  -Remove a item at a given position
+  -Get the number of entries in a list
+  -See if list is empty
+  
+ A list can be used as:
+  -A Static array
+  -A resizable array
+  -A linked list
+ The set of operations you can do on a list is independent of the way its implemented, however the algorithm to do said operation depends on the implementation
+ 
+ Static and resizable lists and the same other than when you attempt to add an item to  a full static list, it will return an error, but if you attempt to do the same on a resizable list it will resize itself and allow it to be added.
+ 
+ There are several things to think about when adding an item to a list:
+  -If it is full, it must be resized
+  -Adding an item to the end of a list is incredibly efficient, just put an item at the size of the list
+  -Adding an item in a random point in the list requires all other item to be moved around it to allow it to go there
+  
+Searching for an item within a array involes, stepping through the list one by one until either the wanted item is found, or the end of it is reached.
+
+Removing an item at a given position requires moving other items around so not to leave a blank space in a list.
+
+Storing the number of items within a list as a attribute allows the size operations to b incredibly quick, instead of having to count the items every single time the size of the list is wanted, though it does take up a small amount of storage space.
+
+When adding a item to the end of a list, if it resizable and th array is already full then a common fix is to double to size of the list. The reason for this, is by increasing the size exponentially, you will have to reize the list less often because doing this can take significant time. The big O notation of a list resize is O(n^2), while doubling the size gives this big O notation o(n)
+
+
+
+A singly linked list is made up of nodes with a connection to the next member in the list.
+When inserting a new node a random point in a list, say between b and d, and you are inserting c:
+  -Create a link c to d
+  -Change the link between b and d, so its b to c.
+To remove the node we just added:
+  -You change the link b to c into b to d
+  -Remove the link between b and d
+  
+ There are different ways of adding things to a list:
+  -Adding a node to the front of of a linked list is incredibly quick, because you just make a link between the new node and the original first node
+  -Adding an item at a random point, cna be very slow because they only allow sequentail access
+  
+  
+Linked lists are always the right size, and will never have an empty node, but do require space to store the links between said nodes. Search for points is the same as any other type. They are also dynamic.
+
+They are not very good for inserting at random points though due to the time it takes to find the place where you need to create the node.
+
+
+
+LinkedList Vs. ArrayList
+Operation        | ArrayList | LinkedList
+get by index     | O(1)      |   O(n)
+add at end       | O(1)      |   O(n)
+add at start     | O(n)      |   O(1)
+add in middle    | O(n)      |   O(n)
+indexOf          | O(n)      |   O(n)
+remove at end    | O(1)      |   O(n)
+remove at start  | O(n)      |   O(1)
+remove at middle | O(n)      |   O(n)
+iterate          | O(n)      |   O(n)
+
+Searching for an object:
+  When searching a normal list, it can just return the index if it found, else it will return null. 
+*NOT WRITTEN IN AN ACTUAL LANGUAGE JUST PSEUDOCODE*
+function findObj(obj, arr){
+  i = 0
+  for x in arr(i++){
+    if x == obj
+      return i
+  }
+  return null
+}
+*NOT WRITTEN IN AN ACTUAL LANGUAGE JUST PSEUDOCODE*
+
+Searching a linked list would look more like this, and would take a lot more time.
+*NOT WRITTEN IN AN ACTUAL LANGUAGE JUST PSEUDOCODE*
+function findObj(obj, arr){
+  i = 0
+  while true{
+    current = arr.get
+    if current == null{
+      break;
+    }
+    if current == obj{
+      return i
+    }
+    i++
+  }
+  return null
+}
+*NOT WRITTEN IN AN ACTUAL LANGUAGE JUST PSEUDOCODE*
+
