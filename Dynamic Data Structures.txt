@@ -1,0 +1,14 @@
+Dynamic Data Structures: A data structure whose form can change over the duration of run time. The changes that can occur include size(getting smaller and larger), and structure as links are created and removed.
+
+The benefits of using it are:
+	-The are always the correct size
+	-Their structure can evole over time
+The drawbacks are:
+	-They require more storage space
+	-The require more processing to deal with
+
+Types of Dynamic Data Structures:
+	-Resizable Array
+	-Linked List
+	-Tree
+	-Graph 
